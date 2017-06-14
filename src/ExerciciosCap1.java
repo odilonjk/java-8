@@ -19,7 +19,7 @@ public class ExerciciosCap1 {
 		bandas.sort(comparador);
 		
 		//	Imprimir usando Consumer
-		Consumer imprime = new ImprimeNaLinha();
+		Consumer<String> imprime = new ImprimeNaLinha();
 		bandas.forEach(imprime);
 		
 	}
