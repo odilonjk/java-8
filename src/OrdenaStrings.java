@@ -30,6 +30,20 @@ public class OrdenaStrings {
 		Consumer<String> consumidor = new ImprimeNaLinha();
 		lista.forEach(consumidor);
 		
+		
+		//	Realizando o mesmo, mas usando lambda
+		List<String> palavras = new ArrayList<>();
+		palavras.add("Osso Avassalador");
+		palavras.add("Holandês Voador");
+		palavras.add("Azeitona do Salgadinho");
+		palavras.add("Caroço Rangedor");
+		
+		//	Ordenando
+		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		
+		//	Imprimindo
+		palavras.forEach(palavra -> System.out.println(palavra));
+		
 	}
 	
 }
