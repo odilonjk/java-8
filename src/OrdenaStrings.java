@@ -38,11 +38,17 @@ public class OrdenaStrings {
 		palavras.add("Azeitona do Salgadinho");
 		palavras.add("Caroço Rangedor");
 		
-		//	Ordenando
-		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		//	Ordenando com lambda
+		//palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		//	Atualizando para uso de static method e method reference
+		palavras.sort(Comparator.comparing(String::length));
 		
 		//	Imprimindo
-		palavras.forEach(palavra -> System.out.println(palavra));
+		//palavras.forEach(palavra -> System.out.println(palavra));
+		//	Atualizando para o uso de method reference
+		palavras.forEach(System.out::println);
+
+		
 		
 	}
 	
