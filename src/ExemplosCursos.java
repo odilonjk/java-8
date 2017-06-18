@@ -17,7 +17,7 @@ public class ExemplosCursos {
 		cursos.add(new Curso("Photoshop", 251));
 	
 		//	Ordenando por numero de alunos
-		cursos.sort(Comparator.comparing(Curso::getAlunos));
+		cursos.sort(Comparator.comparingInt(Curso::getAlunos));
 		
 		//	Filtrando por cursos com mais de 300 alunos
 		cursos.stream()
