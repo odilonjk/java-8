@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExemplosCursos {
 
@@ -30,6 +31,20 @@ public class ExemplosCursos {
 			.mapToInt(Curso::getAlunos)
 			.sum();
 		System.out.println("Total de alunos: " + total);
+		
+		//	Utilizando Optional (ifPresent)
+		cursos.stream()
+			.filter(c->c.getAlunos() > 100)
+			.findAny()
+			.ifPresent(c -> System.out.println(c.getNome()));
+		
+		//	Utilizando collect e map
+		cursos.stream()
+			.filter(c->c.getAlunos() > 300)
+			.collect(Collectors.toMap(
+					c -> c.getNome(),
+					c -> c.getAlunos()))
+			.forEach((nome, alunos) -> System.out.println(nome + " tem " + alunos + " alunos."));
 		
 	}
 	
